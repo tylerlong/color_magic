@@ -1,0 +1,30 @@
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<link rel="stylesheet" type="text/css" href="css/farbtastic.css"/>
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/farbtastic.js"></script>
+<script src="js/popup.js"></script>
+
+<fieldset>
+    <legend>Background</legend>
+    <div id="bg-color-picker"></div>
+    <input type="text" id="bg-color" name="bg-color" value="#cce8cf" />
+</fieldset>
+<hr/>
+<fieldset>
+    <legend>Foreground</legend>
+    <div id="fg-color-picker"></div>
+    <input type="text" id="fg-color" name="fg-color" value="#000000" />
+</fieldset>
+
+<script type="text/javascript">
+$(function(){
+    var bgColor = new Color($.farbtastic('#bg-color-picker'), $('#bg-color'), page.change_background);
+    var fgColor = new Color($.farbtastic('#fg-color-picker'), $('#fg-color'), page.change_foreground);
+    if(typeof localStorage.bg_color != 'undefined'){
+        bgColor.setColor(localStorage.bg_color);
+    }
+    if(typeof localStorage.fg_color != 'undefined'){
+        fgColor.setColor(localStorage.fg_color);
+    }
+});
+</script>

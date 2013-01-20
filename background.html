@@ -1,0 +1,28 @@
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<script src="js/jquery.min.js"></script>
+
+<script type="text/javascript">
+var LIGHT_GREEN = '#cce8cf';
+if(typeof localStorage.bg_color != 'undefined'){
+    var bg_color = localStorage.bg_color;
+}else{
+    var bg_color = LIGHT_GREEN;
+}
+if(typeof localStorage.fg_color != 'undefined'){
+    var fg_color = localStorage.fg_color;
+}else{
+    var fg_color = 'black';
+}
+
+$(function(){
+chrome.extension.onRequest.addListener(
+    function(request, sender, sendResponse){
+    if (request == "colors"){
+        sendResponse({"bg_color": bg_color, "fg_color": fg_color});
+    }
+    else{
+        sendResponse({});
+    }
+});
+});
+</script>

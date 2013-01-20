@@ -1,0 +1,24 @@
+{
+   "background_page": "background.html",
+   "browser_action": {
+      "default_icon": "img/icons/icon19.png",
+      "default_popup": "popup.html",
+      "name": "color magic"
+   },
+   "content_scripts": [ {
+      "js": [ "js/jquery.min.js", "js/inject.js" ],
+      "matches": [ "*://*/*" ],
+      "run_at": "document_end"
+   } ],
+   "description": "Change background and foreground colors for eye health and normal vision",
+   "icons": {
+      "128": "img/icons/icon128.png",
+      "16": "img/icons/icon16.png",
+      "48": "img/icons/icon48.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDPTJot32B495PWuNxuYdc55nzV9mmRP1znbyrDik1LG9eojc33DchxfKcrpXRisopGev76lyTzJxdSKXDcKoQ2UhmHyxEx1nfS5veun4rcdRBRkII4Jy8pVN5cG5bR0JDVvc5TksAKw/nAEDPlzYd25lTQwEHAwx5Ka75pSUWXfwIDAQAB",
+   "name": "color magic",
+   "permissions": [ "tabs", "*://*/*" ],
+   "update_url": "http://clients2.google.com/service/update2/crx",
+   "version": "1.1"
+}
